@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Play/Pause",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "windows",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
